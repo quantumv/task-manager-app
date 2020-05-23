@@ -1,30 +1,22 @@
-// CRUD create read update delete
+// // CRUD create read update delete
 
-const { MongoClient, ObjectID } = require('mongodb')
+// const { MongoClient, ObjectID } = require('mongodb')
 
-const connectionURL = 'mongodb://127.0.0.1:27017'
-const databaseName = 'task-manager'
+// const connectionURL = 'mongodb://127.0.0.1:27017'
+// const databaseName = 'task-manager'
 
-MongoClient.connect(connectionURL, { useUnifiedTopology: true }, (err, client) => {
-    if(err) {
-        return console.log('Unable to connect to database!')
-    }
-    // In this example we are going to remove users. I a will delete users older then 40 years age.
-    const db = client.db(databaseName)
-// Santa age 130 was removed
-    // db.collection('users').deleteMany({
-    //     age: 130
-    // }).then((result) => {
-    //     console.log(result)
-    // }).catch((err) => {
-    //     console.log(err)
-    // })
+// MongoClient.connect(connectionURL, { useNewUrlParser: true }, {useUnifiedTopology: true}, (error, client) => {
+//     if (error) {
+//         return console.log('Unable to connect to database!')
+//     }
 
-    db.collection('tasks').deleteOne({
-       description: "Wash the car"
-    }).then((result) => {
-        console.log(result)
-    }).catch((err) => {
-        console.log(err)
-    })    
-})
+//     const db = client.db(databaseName)
+    
+//     db.collection('tasks').deleteOne({
+//         description: "Clean the house"
+//     }).then((result) => {
+//         console.log(result)
+//     }).catch((error) => {
+//         console.log(error)
+//     })
+// })
