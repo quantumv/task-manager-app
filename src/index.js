@@ -6,18 +6,6 @@ const taskRouter = require('./routers/task')
 const app = express()
 const port = process.env.PORT || 3000
 
-//Adding multer
-const multer = require('multer')
-//Configuring multer
-const upload = multer({
-    //dest=destination
-    dest: 'images'
-})
-//Setting endpoint configuring server
-app.post('/upload', upload.single('upload'), (req,res) => {
-    res.send
-})
-
 
 app.use(express.json())
 app.use(userRouter)
